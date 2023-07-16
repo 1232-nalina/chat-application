@@ -1,0 +1,49 @@
+/* MObile width  */
+@media screen 
+  and (min-device-width: 320px) 
+  and (max-device-width:400px)
+  
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+    .createjoin{
+        display: none;
+    }
+    .image img{
+        position: relative;
+        left: -60%;
+    }
+    .logo a{
+  
+        position: absolute;
+        
+        left: 8%;
+        
+    }
+
+    
+}
+
+
+
+
+
+/* Tablet width */
+
+@media 
+  (min-device-width: 800px) 
+  and (max-device-width: 1050px) {
+.createjoin{
+    position: relative;
+   left:68%;
+    width: 200px;
+    top: 20px;
+}
+ header .image {
+    position: absolute;
+    left: 94%;
+    top: 15px;
+}
+
+
+
+}

@@ -1,0 +1,77 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.3;
+  overflow: auto;
+
+  /* background: rgb(128, 128, 128,0.1); */
+}
+* {
+  text-decoration: none;
+  font-family: "Lato", "Source Sans Pro", sans-serif;
+}
+.header {
+  position: relative;
+  background: white;
+  height: 60px;
+  border-bottom: 1px solid rgb(128, 128, 128, 0.4);
+  overflow: hidden;
+}
+
+.logo a {
+  font-family: "Dancing Script", cursive;
+  position: absolute;
+  font-size: 2em;
+  font-weight: 800;
+  top: 10px;
+  left: 2.5%;
+  color: #000;
+}
+.logo a span {
+  color: rgba(59, 133, 198);
+  font-family: "Dancing Script", cursive;
+}
+
+.createjoin {
+  position: relative;
+  left: 75%;
+  width: 200px;
+  top: 20px;
+}
+
+.createjoin a {
+  display: inline-block;
+  font-size: 16.3px;
+  font-weight: 500;
+  color: rgba(59, 133, 198);
+}
+
+.create:hover,
+.join:hover {
+  color: rgba(59, 133, 198, 0.7);
+}
+
+.createjoin span {
+  color: #000000;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+main#main-container {
+  position: absolute;
+  width: 100%;
+  background: #ffffff;
+
+  height: auto;
+  overflow: hidden;
+  display: grid;
+}
+
+.icon-smile:before {
+  content: " ";
+  width: 16px;
+  height: 16px;
+  display: flex;
+  background: url(icon-smile.png);
+}
