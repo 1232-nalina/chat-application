@@ -40,13 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host = 'smtp.office365.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'nalinashrestha90@outlook.com';
-            $mail->Password = 'Arch!tecture12';
+            $mail->Username = 'sender email';
+            $mail->Password = 'write your email password';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
             // Sender and recipient details
-            $mail->setFrom('nalinashrestha90@outlook.com', 'Reset your password!!');
+            $mail->setFrom('sender email', 'Reset your password!!');
             $mail->addAddress($email);
 
             // Email content
