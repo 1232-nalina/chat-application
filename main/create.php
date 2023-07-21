@@ -1,6 +1,3 @@
-<!-- Creating community -->
-
-
 <?php
 $key = openssl_random_pseudo_bytes(32); // Generate key
 include('session_start.php');
@@ -32,4 +29,3 @@ echo "Decrypted message: " . $decrypted . "<br>";
 
 ?>
 
-<!-- end of create community code -->

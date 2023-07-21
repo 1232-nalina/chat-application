@@ -76,8 +76,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Forgot Password</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Pacifico', cursive;
+            background-color: #F2F2F2;
             color: #333333;
             margin: 0;
             padding: 0;
@@ -93,12 +93,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        h2 {
-            text-align: center;
+        h1 {
+            font-size: 2em;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      margin-bottom: 20px;
+      font-family: 'Pacifico', cursive;
+
+      color: #333333;
         }
 
         p {
             margin-bottom: 15px;
+            color: #555555;
+            font-family: 'Pacifico', cursive;
         }
 
         form {
@@ -108,6 +117,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         label {
             margin-bottom: 5px;
+            color: #333333;
+            font-weight: 600;
         }
 
         input[type="email"] {
@@ -121,21 +132,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         input[type="submit"] {
             padding: 10px 20px;
-            background-color: #3B85C6;
+            background-color: #333333;
             color: #ffffff;
             border: none;
-            border-radius: 3px;
+            border-radius: 30px;
             cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            font-family: 'Pacifico', cursive;
         }
 
         input[type="submit"]:hover {
-            background-color: #1c85dc;
+            background-color: #555555;
         }
+
+        
+    .login_links {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #888888;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .login_links a {
+      text-decoration: none;
+      color: #888888;
+      transition: color 0.3s;
+    }
+
+    .login_links a:hover {
+      color: #333333;
+    }
+
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Forgot Password?</h2>
+        <h1>Forgot Password?</h1>
 
         <?php if (isset($_SESSION['forgot_msg'])): ?>
             <p><?php echo $_SESSION['forgot_msg']; ?></p>
@@ -149,7 +186,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="email" name="email" id="email" required>
 
             <input type="submit" value="Reset Password">
+            <div class="login_links">
+      <a href="index.php">Remembered your password? Click me</a>
+    </div>
         </form>
     </div>
+    
 </body>
 </html>

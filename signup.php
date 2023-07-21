@@ -5,77 +5,114 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sign Up</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
   <style>
+    body {
+      background-color: #F2F2F2;
+    }
+
     .signup {
       position: absolute;
       transform: translate(-50%, -50%);
       top: 50%;
       left: 50%;
-      background: white;
-      border: 1px solid rgba(128, 128, 128, 0.3);
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
       width: 350px;
-      height: auto;
+      padding: 20px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
     }
 
     h1 {
       font-size: 2em;
       text-align: center;
-      border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       padding: 20px;
       font-weight: 600;
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Pacifico', cursive;
+      color: #333333;
     }
 
-    .signup_name input {
-      width: 90%;
-      margin: 10px;
+    .signup input[type="text"],
+    .signup input[type="email"],
+    .signup input[type="password"] {
+      width: 100%;
+      margin-bottom: 15px;
       height: 40px;
+      padding: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      background-color: #FFFFFF;
+      color: #333333;
+      font-size: 1em;
+      font-family: 'Pacifico', cursive;
     }
 
-    .signup_password input {
-      width: 90%;
-      margin: 10px 10px 0 10px;
-      height: 40px;
+    input[type=checkbox] {
+      position: relative;
+      width: 20px;
+      height: 10px;
+      margin: 10px 0 10px 0px;
+      left: 235px;
     }
 
-    .signup_username input {
-      width: 90%;
-      margin: 10px;
-      height: 40px;
-    }
-
-    .signup_email input {
-      width: 90%;
-      margin: 10px;
-      height: 40px;
+    input[type=checkbox]+span {
+      color: grey;
+      font-size: 0.8em;
+      margin-left: 230px;
     }
 
     input[type=submit] {
-      width: 60%;
-      margin: 30px 60px;
+      width: 100%;
       height: 50px;
-      background: rgba(59, 133, 198);
+      background: #333333;
       border: none;
-      border-radius: 30px;
-      color: white;
+      border-radius: 25px;
+      color: #FFFFFF;
       font-size: 1.2em;
       font-weight: 500;
       cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: 'Pacifico', cursive;
     }
 
     input[type=submit]:hover {
-      opacity: 0.7;
+      background-color: #555555;
+    }
+
+    .signup_links {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #888888;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .signup_links a {
+      text-decoration: none;
+      color: #888888;
+      transition: color 0.3s;
+    }
+
+    .signup_links a:hover {
+      color: #333333;
+    }
+
+    .signup_message {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 1em;
+      color: #FF9494;
+      font-family: 'Pacifico', cursive;
     }
   </style>
-
   <script>
     function showPassword() {
       var pass = document.getElementById("myPassword");
@@ -86,17 +123,12 @@
       }
     }
   </script>
-
 </head>
 
 <body>
-  <?php
-  include_once "main/loader.php";
-  ?>
-
   <div class="signup">
     <form action="register.php" method="POST" enctype="multipart/form-data">
-      <h1>Sign in</h1>
+      <h1>Sign Up</h1>
 
       <div class="signup_name">
         <input type="text" name="name" placeholder="Full Name" required>
@@ -110,33 +142,26 @@
 
       <div class="signup_password">
         <input type="password" name="password" placeholder="Set a Password" id="myPassword" required>
-        <input type="checkbox" onclick="showPassword()" style="position:relative;width:20px;height:10px;margin:10px 0 10px 0px;left:235px;"> <span style="color:grey;font-size:0.8em;margin-left:230px;"> Show Password</span>
+        <input type="checkbox" onclick="showPassword()">
+        <span>Show Password</span>
       </div>
-
-     
-
-     
 
       <input type="submit" value="Sign Up">
     </form>
 
-    <a href="index.php" style="position:relative;text-decoration:none;left:100px;color:grey;font-size:0.9em;" onMouseOver="this.style.color='rgba(59, 133, 198)'" onMouseOut="this.style.color='grey'">Login here? Click me</a>
-
-    <div style="height: 5px;"></div>
-
-    <div style="color: rgba(255, 148, 148); font-size: 1em;padding:5px;">
-      <center>
-        <?php
-        // session_start();
-        if (isset($_SESSION['sign_msg'])) {
-          echo $_SESSION['sign_msg'];
-          unset($_SESSION['sign_msg']);
-        }
-        ?>
-      </center>
+    <div class="signup_links">
+      <a href="index.php">Already have an account? click me</a>
     </div>
 
-    <div style="height: 5px;"></div>
+    <div class="signup_message">
+      <?php
+      // session_start();
+      if (isset($_SESSION['sign_msg'])) {
+        echo $_SESSION['sign_msg'];
+        unset($_SESSION['sign_msg']);
+      }
+      ?>
+    </div>
   </div>
 </body>
 

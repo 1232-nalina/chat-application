@@ -7,13 +7,6 @@ require_once "func.php";
 
 // Include the Composer autoloader
 require_once '../vendor/autoload.php';
-// use \ConsoleTVs\Profanity\Profanity;
-
-// $profanity = new Profanity();
-// $profanity->setDictionary([
-//     '5h1t','5hit','a$$','a$$hole','a_s_s','a2m','a54','a55','a55hole','aeolus','ahole','alabamah hot pocket','alaskan pipeline','anal','anal impaler','anal leakage','analannie','analprobe','analsex','anilingus','anus','apeshit','ar5e','areola','areole','arian','arrse','arse','arsehole','aryan','ass','ass fuck','ass hole','assault','assbag','assbagger','assbandit','assbang','assbanged','assbanger','assbangs','assbite','assblaster','assclown','asscock','asscracker','asses','assface','assfaces','assfuck','assfucker','ass-fucker','assfukka','assgoblin','assh0le','asshat','ass-hat','asshead','assho1e','asshole','assholes','asshopper','asshore','ass-jabber','assjacker','assjockey','asskiss','asskisser','assklown','asslick','asslicker','asslover','assman','assmaster','assmonkey','assmucus','assmunch','assmuncher','assnigger','asspacker','asspirate'
-//     // Add more forbidden words here
-// ]);
 
 
 

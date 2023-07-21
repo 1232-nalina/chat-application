@@ -1,41 +1,3 @@
-<?php
-include('dbconn.php');
-session_start();
-
-function check_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $password = check_input($_POST["password"]);
-    $confirmPassword = check_input($_POST["confirm_password"]);
-    $token = check_input($_POST["token"]);
-
-    if ($password !== $confirmPassword) {
-        $_SESSION['reset_msg'] = "Passwords do not match.";
-        header('Location: reset_password.php?token=' . $token);
-        exit;
-    }
-
-    // Update the user's password and remove the reset token
-    $hashedPassword = md5($password);
-    $stmt = $conn->prepare("UPDATE community_user SET password = ?, reset_token = NULL WHERE reset_token = ?");
-    $stmt->bind_param("ss", $hashedPassword, $token);
-    $stmt->execute();
-
-    if ($stmt->affected_rows > 0) {
-        $_SESSION['reset_msg'] = "Password reset successfully. You can now log in with your new password.";
-        header('Location: index.php');
-    } else {
-        $_SESSION['reset_msg'] = "Failed to reset password. Please try again.";
-        header('Location: reset_password.php?token=' . $token);
-    }
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         body {
             background-color: #F2F2F2;
-            font-family: Arial, sans-serif;
+            font-family: 'Lato', sans-serif;
         }
         
         h2 {
@@ -51,16 +13,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         
         .form-container {
-            background-color: #FFFFFF;
-            max-width: 400px;
-            margin: 0 auto;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            background: #F8F8F8;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            width: 350px;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         
         .form-container p {
-            color: #666666;
+            color: #CCCCCC;
             margin-bottom: 20px;
         }
         
@@ -69,24 +35,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #CCCCCC;
-            border-radius: 3px;
+            border-radius: 5px;
             box-sizing: border-box;
+            background-color: #FFFFFF;
+            color: #333333;
+            font-family: 'Lato', sans-serif;
+            font-size: 1em;
         }
         
         .form-container input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background-color: #3B85C6;
+            background-color: #333333;
             color: #FFFFFF;
             border: none;
-            border-radius: 3px;
+            border-radius: 25px;
             cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.2em;
+            font-weight: 500;
+            transition: background-color 0.3s;
         }
         
         .form-container input[type="submit"]:hover {
-            background-color: #2978B5;
+            background-color: #555555;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="form-container">

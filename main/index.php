@@ -95,7 +95,7 @@ border-radius: 30px;
         <div class="col-md-3" style="position: relative;margin: 30px  0  0 31px; max-width:100%; height:inherit;  ">
           <a style="margin:0;padding:0;margin: 0; padding: 0;position: absolute;height: 100%;width: 100%;" href="groupspace.php?id=<?php echo $row['chatroomid']; ?>">
             <div class="card" style="width: 300px;height:240px;  cursor:pointer; border:1px solid #cccc;">
-              <div class="card-header" style="padding:1px;margin:0;  position: relative; height:60px;  background:rgba(59, 133, 198) ;border-bottom:1px solid #cccc;  ">
+              <div class="card-header" style="padding:1px;margin:0;  position: relative; height:60px;  background:#610053; border-bottom:1px solid #cccc;  ">
                 <a style="position: absolute;height:60px;width:100%;" href="groupspace.php?id=<?php echo $row['chatroomid']; ?>">
                   <h1 style=" font-family:sans-serif; font-size:1.5em;font-weight:700;color:#fff;font-weight:100;border:none;"><?php echo $row['chat_name']; ?></h1>
                 </a>

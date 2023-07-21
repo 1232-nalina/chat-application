@@ -9,7 +9,7 @@ body {
 }
 * {
   text-decoration: none;
-  font-family: "Lato", "Source Sans Pro", sans-serif;
+  font-family: "Pacifico", cursive;
 }
 .header {
   position: relative;
@@ -29,7 +29,7 @@ body {
   color: #000;
 }
 .logo a span {
-  color: rgba(59, 133, 198);
+  color: #610053;
   font-family: "Dancing Script", cursive;
 }
 
@@ -44,12 +44,12 @@ body {
   display: inline-block;
   font-size: 16.3px;
   font-weight: 500;
-  color: rgba(59, 133, 198);
+  color: #610053;
 }
 
 .create:hover,
 .join:hover {
-  color: rgba(59, 133, 198, 0.7);
+  color: #610053;
 }
 
 .createjoin span {

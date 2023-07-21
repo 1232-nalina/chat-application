@@ -17,8 +17,7 @@ $cmem = mysqli_query($conn, "select * from community_member where chatroomid='$i
 
 $message = isset($_POST['message']) ? $_POST['message'] : ""; // Assign an empty string to $message
 $key = bin2hex(random_bytes(16)); // Assign an empty string to $key
-
-
+ 
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,14 +34,14 @@ $key = bin2hex(random_bytes(16)); // Assign an empty string to $key
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link href="vendor/emoji-picker/lib/css/emoji.css" rel="stylesheet">
+    <link href="../vendor/emoji-picker/lib/css/emoji.css" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="vendor/emoji-picker/lib/js/config.js"></script>
-    <script src="vendor/emoji-picker/lib/js/util.js"></script>
-    <script src="vendor/emoji-picker/lib/js/jquery.emojiarea.js"></script>
-    <script src="vendor/emoji-picker/lib/js/emoji-picker.js"></script>
+    <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../vendor/emoji-picker/lib/js/config.js"></script>
+    <script src="../vendor/emoji-picker/lib/js/util.js"></script>
+    <script src="../vendor/emoji-picker/lib/js/jquery.emojiarea.js"></script>
+    <script src="../vendor/emoji-picker/lib/js/emoji-picker.js"></script>
     
     </head>
 
@@ -91,8 +90,13 @@ width:100%;max-height:80vh;background:white;margin:0px 0 0 0;overflow-y:scroll;p
                     <div class="input" style="position: fixed;top:88%;width:100%;background:white;height:80px;border-top:1px solid rgba(128,128,128,0.1)">
                         <input type="text" class="form-control" placeholder="Type message..." id="chat_msg" style="height: 50px;width:90%;margin:10px 0 0 20px;" data-emojiable="true"
 							data-emoji-input="unicode">
-                            <i class="fa-solid fa-cloud-arrow-up" ></i>
-                            <i class="fa-regular fa-face-smile"></i>
+                        
+                            <input type="file" id="image-input" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+            
+                            <a href="#" onclick="document.getElementById('image-input').click(); return false;"><i class="fa fa-image"></i> </a>
+                    
+                            <i class="fa-regular fa-face-smile" id="emoji-picker-icon"></i>
+
                         <button class="btn" type="submit" id="send_msg" value="<?php echo $id; ?>" style="border-top-left-radius: 0;
 border-bottom-left-radius: 0;
 height: 55px;
@@ -100,7 +104,7 @@ position:relative;
 left:10px;
 top:0px;
 background: rgba();
-background: rgb(59, 133, 198);">
+background: #610053;">
                             Send
                         </button>
                         
@@ -153,6 +157,7 @@ background: rgb(59, 133, 198);">
                     if (e.which == 13) {
                         $("#send_msg").click();
                     }
+                    
                 });
             });
 
@@ -213,20 +218,26 @@ background: rgb(59, 133, 198);">
             }
             });
 
+            function handleImageUpload(event) {
+            const file = event.target.files[0];
+            // Process the selected image file here
+            }
             //emoji
 
-            $(function () {
-                // Initializes and creates emoji set from sprite sheet
-                window.emojiPicker = new EmojiPicker({
-                    emojiable_selector: '[data-emojiable=true]',
-                    assetsPath: '../vendor/emoji-picker/lib/img/',
-                    popupButtonClasses: 'icon-smile'
-                });
+//             $(document).ready(function() {
+//   // Initialize the emoji picker
+//             window.emojiPicker = new EmojiPicker({
+//                 emojiable_selector: '[data-emojiable=true]',
+//                 assetsPath: '../vendor/emoji-picker/img/',
+//                 popupButtonClasses: 'icon-smile'
+//             });
 
-                window.emojiPicker.discover();
-                window.emojiPicker.init();
+//             // Discover and initialize the emoji picker
+//             window.emojiPicker.discover();
+//             });
 
-            });
+
+       
 
 
 //                     import * as Video from 'twilio-video';

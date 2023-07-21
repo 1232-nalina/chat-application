@@ -403,7 +403,7 @@ top:2px;
       border-radius: 50px;
       position: relative;
       left: 130px;
-      border: 1px solid rgba(59, 133, 198);
+      border: 1px solid #610053;
 
       padding: 5px;
 
@@ -428,7 +428,7 @@ border-radius: 50px;
 position: relative;
 left:130px;
 
-border:1px solid rgba(59, 133, 198);
+border:1px solid #610053;
 padding:3px;
 "
 
@@ -493,16 +493,16 @@ border-radius: 30px;
 position: absolute;
 left: 40%;
 top: 15px;
-border:1px solid rgba(59, 133, 198);
+border:1px solid #610053;
 padding:3px;">
 
   <?php
   if (empty($srow['photo'])) { ?>
-    <a href="#" onclick="on(),photoUp()" style="position: absolute;top:74px;left:28%;font-size: 0.9em;color:rgba(59, 133, 198);cursor:pointer;">Upload picture</a>
+    <a href="#" onclick="on(),photoUp()" style="position: absolute;top:74px;left:28%;font-size: 0.9em;color:#610053;cursor:pointer;">Upload picture</a>
 
 
   <?php } else { ?>
-    <a href="#" onclick="on(),photoUp()" style="position: absolute;top:74px;left:28%;font-size: 0.9em;color:rgba(59, 133, 198);cursor:pointer;">Update your picture</a>
+    <a href="#" onclick="on(),photoUp()" style="position: absolute;top:74px;left:28%;font-size: 0.9em;color:#610053;cursor:pointer;">Update your picture</a>
 
 
   <?php }
@@ -565,7 +565,7 @@ text-align: center;"><?php echo "User id : " . $useridshow; ?></h2>
     left: 37%;
     width: 70px;
     color: white;
-    background: rgba(59, 133, 198);
+    background: #610053;
     border-radius: 15px;
     border: none;
     height: 30px;
@@ -587,7 +587,7 @@ text-align: center;"><?php echo "User id : " . $useridshow; ?></h2>
     position: relative;
     left: 90px;
     top: 15px;
-    color: rgba(59, 133, 198);
+    color: #610053;
     font-size: 1.2em;
     font-weight: 500;
   }

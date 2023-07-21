@@ -9,7 +9,7 @@ transform:translate(-50%,-50%);">
 font-size: 3em;
 font-weight: 800;
 
-color: #000; ">Chat<span style=" color: rgba(59, 133, 198);
+color: #000; ">Chat<span style=" color: #610053;
 font-family: 'Dancing Script', cursive;">App</span></a>
         <h5 style="font-size:0.9em;margin-top:0;margin-left:30px;">Chat anytime...</h5>
     </div>
