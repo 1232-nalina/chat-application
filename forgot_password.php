@@ -40,13 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host = 'smtp.office365.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'sender email';
-            $mail->Password = 'write your email password';
+            $mail->Username = 'nalinashrestha90@outlook.com';
+            $mail->Password = 'Arch!tecture12';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
             // Sender and recipient details
-            $mail->setFrom('sender email', 'Reset your password!!');
+            $mail->setFrom('nalinashrestha90@outlook.com', 'Reset your password!!');
             $mail->addAddress($email);
 
             // Email content
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Forgot Password</title>
     <style>
         body {
-            font-family: 'Pacifico', cursive;
+            font-family: 'Lato', sans-serif;
             background-color: #F2F2F2;
             color: #333333;
             margin: 0;
@@ -94,21 +94,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         h1 {
-            font-size: 2em;
+      font-size: 2em;
       text-align: center;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       padding: 10px;
       margin-bottom: 20px;
       font-family: 'Pacifico', cursive;
-
       color: #333333;
         }
 
         p {
             margin-bottom: 15px;
             color: #555555;
-            font-family: 'Pacifico', cursive;
         }
+
 
         form {
             display: flex;

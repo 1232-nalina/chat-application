@@ -24,7 +24,7 @@
       left: 50%;
       background: #FFFFFF;
       border: 1px solid rgba(0, 0, 0, 0.1);
-      width: 350px;
+      width: 450px;
       padding: 20px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
@@ -43,7 +43,7 @@
     .signup input[type="text"],
     .signup input[type="email"],
     .signup input[type="password"] {
-      width: 100%;
+      width: 95%;
       margin-bottom: 15px;
       height: 40px;
       padding: 10px;
@@ -60,13 +60,14 @@
       width: 20px;
       height: 10px;
       margin: 10px 0 10px 0px;
-      left: 235px;
+      left: 318px;
     }
 
     input[type=checkbox]+span {
-      color: grey;
+      color: #585858;
       font-size: 0.8em;
-      margin-left: 230px;
+      margin-left:315px;
+      margin-top: 115px;
     }
 
     input[type=submit] {
@@ -84,7 +85,7 @@
     }
 
     input[type=submit]:hover {
-      background-color: #555555;
+      background-color: #610053;
     }
 
     .signup_links {
